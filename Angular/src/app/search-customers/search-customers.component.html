@@ -1,0 +1,31 @@
+<h3>Buscar cliente por edad</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="lastname">Edad </label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="age" name="age">
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Buscar cliente</button>
+    </div>
+  </form>
+</div>
+<ul>
+  <li *ngFor="let customer of customers">
+    <h1>Lista de clientes</h1>
+    <table class="tabla">
+      <tr>
+        <th> ID  </th>
+        <th> Nombre  </th>
+        <th> Edad  </th>
+      </tr>
+      <tr>
+        <td><h4>{{customer.id}}&nbsp;&nbsp;</h4></td>
+        <td><h4>{{customer.name}}&nbsp;&nbsp;</h4></td>
+        <td><h4>{{customer.age}}&nbsp;&nbsp;</h4></td>
+      </tr>
+    </table>
+    <!--<h4>{{customer.id}} - {{customer.name}} {{customer.age}}</h4>-->
+  </li>
+</ul>

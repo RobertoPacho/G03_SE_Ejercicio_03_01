@@ -1,0 +1,21 @@
+<h3>Agregar Cliente</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="age">Edad</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age">
+    </div>
+
+    <button type="submit" class="btn btn-success">Agregar</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Cliente agregado exitosamente</h4>
+  <button class="btn btn-success" (click)="newCustomer()">Agregar nuevo cliente</button>
+</div>
